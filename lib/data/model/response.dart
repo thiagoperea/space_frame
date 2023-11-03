@@ -2,7 +2,7 @@
 
 sealed class ResponseState<T> {}
 
-class Loading extends ResponseState {}
+class Loading<T> extends ResponseState<T> {}
 
 class Success<T> extends ResponseState<T> {
   final T data;
@@ -10,7 +10,7 @@ class Success<T> extends ResponseState<T> {
   Success({required this.data});
 }
 
-class Error extends ResponseState {
+class Error<T> extends ResponseState<T> {
   final String? message;
 
   Error({this.message});
